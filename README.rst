@@ -24,7 +24,11 @@ Install django-hdfs::
 
 Then use it in a project::
 
-    import django_hdfs
+    from django_hdfs.storages import HDFSStorage
+    
+    # then use it in for FileField 
+    some_doc = models.FileField('Upload Some Doc', null=True, blank=True, storage=HDFSStorage(),
+                                       upload_to=appcode_directory_path)
 
 Features
 --------
