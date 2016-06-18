@@ -28,7 +28,7 @@ Then use it in a project::
     
     # then use it in for FileField 
     some_doc = models.FileField('Upload Some Doc', null=True, blank=True, storage=HDFSStorage(),
-                                       upload_to=appcode_directory_path)
+                                       upload_to='some/path')
 
 Features
 --------
