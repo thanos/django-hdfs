@@ -15,6 +15,12 @@ Documentation
 
 The full documentation is at https://django-hdfs.readthedocs.org.
 
+Features
+--------
+
+* Store all your uploaded media in HDFS
+
+
 Quickstart
 ----------
 
@@ -52,29 +58,5 @@ Then use it in a project::
     some_doc = models.FileField('Upload Some Doc', null=True, blank=True, storage=HDFSStorage(),
                                        upload_to='some/path')
 
-Features
---------
 
-* TODO
 
-Running Tests
---------------
-
-Does the code actually work?
-
-::
-
-    source <YOURVIRTUALENV>/bin/activate
-    (myenv) $ pip install -r requirements_test.txt
-    (myenv) $ python runtests.py
-
-Credits
----------
-
-Tools used in rendering this package:
-
-*  Cookiecutter_
-*  `cookiecutter-djangopackage`_
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`cookiecutter-djangopackage`: https://github.com/pydanny/cookiecutter-djangopackage
