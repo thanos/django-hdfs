@@ -20,7 +20,29 @@ Quickstart
 
 Install django-hdfs::
 
-    pip install django-hdfs
+    pip install git+https://github.com/thanos/django-hdfs.git
+    
+    
+Add storages to your settings.py file::
+
+    INSTALLED_APPS = (
+        ...
+        'django_hdfs',
+        ...
+    )
+
+while you are at it set your configurations in the settings.py file::
+
+    HDFS_STROAGE = {
+        'hosts': 'http://somehost:50070',
+        'root': 'your_media'
+    }
+    
+Also set up the media constants::
+
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'UPLOADS')
+    MEDIA_URL = '/media/'    
+
 
 Then use it in a project::
 
