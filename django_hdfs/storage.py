@@ -1,3 +1,16 @@
+
+import logging
+import os
+
+from hdfs import InsecureClient
+from hdfs.util import HdfsError
+
+from django.core.files import File
+from django.core.files.storage import Storage
+from django.utils.deconstruct import deconstructible
+from django.utils.six.moves.urllib.parse import urljoin
+from django.conf import settings
+
 @deconstructible
 class HDFSStorage(Storage):
     """
@@ -25,7 +38,7 @@ class HDFSStorage(Storage):
         local_path = os.path.join(settings.MEDIA_ROOT, name.replace('/', os.path.sep))
         if not os.path.exists(local_path):
             print self.client.download(self.path(name), local_path=os.path.dirname(local_path), overwrite=True,
-                                   temp_dir=tempfile.gettempdir())
+                                       temp_dir=tempfile.gettempdir())
         return File(open(local_path, mode))
 
     def _save(self, name, content):
@@ -62,4 +75,4 @@ class HDFSStorage(Storage):
             return False
 
     def path(self, name):
-        return (self.hdfs_root + name).replace('\\','/')
+        return (self.hdfs_root + name).replace('\\', '/')
