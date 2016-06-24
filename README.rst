@@ -52,7 +52,7 @@ Also set up the media constants::
 
 Then use it in a project::
 
-    from django_hdfs.storages import HDFSStorage
+    from django_hdfs.storage import HDFSStorage
     
     # then use it in for FileField 
     some_doc = models.FileField('Upload Some Doc', null=True, blank=True, storage=HDFSStorage(),
