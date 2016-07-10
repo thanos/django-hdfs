@@ -1,3 +1,5 @@
 django>=1.9.6
+hdfs>=2.0.5
+requests>=2.9.1
 
 # Additional requirements go here
