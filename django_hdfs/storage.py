@@ -24,8 +24,8 @@ class HDFSStorage(Storage):
         return path
 
     def __init__(self, location=None, base_url=None):
-        self.hdfs_hosts = settings.HDFS_STROAGE['hosts']
-        self.hdfs_root = self.fix_slashes(settings.HDFS_STROAGE['root'])
+        self.hdfs_hosts = settings.HDFS_STORAGE['hosts']
+        self.hdfs_root = self.fix_slashes(settings.HDFS_STORAGE['root'])
         self.media_root = settings.MEDIA_ROOT
         self.media_url = self.fix_slashes(settings.MEDIA_URL)
 
